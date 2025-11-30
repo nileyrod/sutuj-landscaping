@@ -94,8 +94,6 @@
             align-items: center;
             gap: 30px;
             list-style: none;
-            overflow: hidden;
-            padding-bottom: 5px;
         }
 
         .nav-links a {
@@ -135,6 +133,7 @@
             border-radius: 25px;
             font-weight: 600;
             transition: var(--transition);
+            white-space: nowrap;
         }
 
         .call-btn:hover {
@@ -796,6 +795,32 @@
 
         /* Mobile Styles */
         @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links .call-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -851,32 +876,6 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 30px;
-                gap: 20px;
-                box-shadow: var(--shadow);
-                transform: translateY(-150%);
-                transition: var(--transition);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .nav-links .call-btn {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
             #home {
                 padding-top: 100px;
             }
