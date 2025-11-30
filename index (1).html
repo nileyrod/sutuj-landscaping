@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sutuj Landscaping - Expert lawn care, hardscaping, and custom outdoor builds in Midlothian & Chesterfield, VA. Serving with quality and detail since 2013.">
+    <title>Sutuj Landscaping | Lawn Care & Hardscaping in Midlothian & Chesterfield, VA</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231a5336'%3E%3Cpath d='M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-green: #1a5336;
+            --light-green: #4a9d6e;
+            --accent-green: #6bbf8a;
+            --white: #ffffff;
+            --off-white: #f8faf9;
+            --charcoal: #2d3436;
+            --dark-gray: #636e72;
+            --light-gray: #dfe6e9;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --max-width: 1140px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--deep-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            color: var(--deep-green);
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--deep-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-green);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 100%;
+        }
+
+        .call-btn {
+            background: var(--deep-green);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .call-btn:hover {
+            background: var(--light-green);
+            transform: translateY(-2px);
+        }
+
+        .call-btn::after {
+            display: none !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--charcoal);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section */
+        #home {
+            padding: 140px 20px 80px;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--deep-green);
+        }
+
+        .hero-text .subheadline {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--deep-green);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            border: 2px solid var(--deep-green);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: var(--deep-green);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-info {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--deep-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.05rem;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--off-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 35px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            color: var(--deep-green);
+        }
+
+        .service-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--deep-green);
+        }
+
+        .service-card p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: var(--max-width);
+            margin: 0 auto 40px;
+        }
+
+        .project-tile {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .project-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 83, 54, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-tile:hover .project-overlay,
+        .project-tile:focus .project-overlay {
+            opacity: 1;
+        }
+
+        .project-tile:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay span {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .projects-cta {
+            text-align: center;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--off-white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .about-text p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .about-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .about-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--light-green);
+            font-weight: bold;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .about-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--deep-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Reviews Section */
+        #reviews {
+            background: var(--white);
+        }
+
+        .reviews-intro {
+            text-align: center;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: var(--max-width);
+            margin: 0 auto 40px;
+        }
+
+        .review-card {
+            background: var(--off-white);
+            padding: 35px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .review-stars {
+            color: #f1c40f;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            color: var(--dark-gray);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .reviews-cta {
+            text-align: center;
+        }
+
+        .reviews-cta p {
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--off-white);
+        }
+
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+        }
+
+        .contact-item a {
+            color: var(--deep-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--light-green);
+        }
+
+        .contact-item span {
+            color: var(--dark-gray);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-green);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #e74c3c;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .form-submit {
+            text-align: center;
+        }
+
+        .success-message {
+            background: var(--light-green);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Hours Strip */
+        .hours-strip {
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hours-strip .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hours-strip p {
+            font-size: 0.95rem;
+        }
+
+        .hours-strip strong {
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-green);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--deep-green);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .about-list {
+                text-align: left;
+                max-width: 350px;
+                margin: 25px auto 0;
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links .call-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            #home {
+                padding-top: 100px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-image,
+            .hero-placeholder {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            .hours-strip .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 3px solid var(--light-green);
+            outline-offset: 2px;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 8px 15px;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <span class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+                    </svg>
+                </span>
+                Sutuj Landscaping
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:5555555555" class="call-btn">Call Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Expert Landscaping & Hardscaping in <span>Midlothian & Chesterfield</span></h1>
+                    <p class="subheadline">From weekly lawn care to custom patios and outdoor living spaces, Sutuj Landscaping has been transforming yards since 2013.</p>
+                    <div class="hero-buttons">
+                        <a href="tel:5555555555" class="btn-primary">Call for a Free Estimate</a>
+                        <a href="#contact" class="btn-secondary">Request a Quote Online</a>
+                    </div>
+                    <p class="hero-info">Serving Midlothian, Chesterfield, and nearby areas • Open 7 AM – 10 PM most days</p>
+                </div>
+                <div class="hero-image">
+                    <img src="attached_assets/sutuj hero img 2_1764542186208.webp" alt="Front yard landscaping with brick retaining wall, mulched bed, and ornamental tree">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Whether you need regular lawn care, a stunning patio, or a complete outdoor transformation, we have the skills and experience to bring your vision to life.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 10a4 4 0 0 0-4 4v6h8v-6a4 4 0 0 0-4-4z"/>
+                                <path d="M12 10V6"/>
+                                <path d="M8 6c0-2 1.5-3 4-3s4 1 4 3c0 1.5-1 2-2 2.5"/>
+                                <path d="M8 6c0 1.5 1 2 2 2.5"/>
+                                <line x1="4" y1="20" x2="20" y2="20"/>
+                            </svg>
+                        </div>
+                        <h3>Lawn Mowing & Maintenance</h3>
+                        <p>Keep your lawn looking its best with our reliable weekly and bi-weekly mowing services, including edging and trimming.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22v-7"/>
+                                <path d="M9 22h6"/>
+                                <path d="M12 15c-4 0-6-3-6-6 0-4 3-6 6-6s6 2 6 6c0 3-2 6-6 6z"/>
+                                <path d="M12 3v4"/>
+                                <path d="M8 7l4 4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Mulching & Planting</h3>
+                        <p>Freshen up your beds with quality mulch and seasonal plantings that add color and curb appeal to your property.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                <rect x="14" y="14" width="7" height="7" rx="1"/>
+                            </svg>
+                        </div>
+                        <h3>Hardscaping</h3>
+                        <p>Custom patios, walkways, and paver installations designed to enhance your outdoor space and add lasting value to your home.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 20h16"/>
+                                <path d="M4 20v-4l2-8h12l2 8v4"/>
+                                <path d="M8 8V4"/>
+                                <path d="M16 8V4"/>
+                                <path d="M4 16h16"/>
+                                <path d="M4 12h16"/>
+                            </svg>
+                        </div>
+                        <h3>Retaining Walls & Edging</h3>
+                        <p>Functional and beautiful retaining walls that manage slopes, define spaces, and add architectural interest to your yard.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 12c0-3 2-5 2-8 0 0 4 2 4 8"/>
+                                <path d="M12 12c0-3-2-5-2-8 0 0-4 2-4 8"/>
+                                <circle cx="12" cy="17" r="5"/>
+                                <path d="M10 17h4"/>
+                            </svg>
+                        </div>
+                        <h3>Outdoor Living Spaces</h3>
+                        <p>Create the perfect gathering spot with fire pits, seating areas, and custom outdoor living spaces for family and friends.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Custom Outdoor Builds</h3>
+                        <p>From steps and landings to small structures and unique features, we bring your custom outdoor ideas to life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Take a look at some of our recent landscaping and hardscaping work throughout Midlothian and Chesterfield.</p>
+                <div class="projects-grid">
+                    <div class="project-tile" tabindex="0">
+                        <img src="attached_assets/sutuj img 1_1764541573016.webp" alt="Fire Pit & Patio with Seating Area">
+                        <div class="project-overlay">
+                            <span>Fire Pit & Patio</span>
+                        </div>
+                    </div>
+                    <div class="project-tile" tabindex="0">
+                        <img src="attached_assets/sutuj img 2_1764541573016.webp" alt="Paver Patio with Curved Stone Wall Seating">
+                        <div class="project-overlay">
+                            <span>Patio & Stone Seating Wall</span>
+                        </div>
+                    </div>
+                    <div class="project-tile" tabindex="0">
+                        <img src="attached_assets/sutuj img 3_1764541573015.webp" alt="Backyard Patio with Retaining Wall">
+                        <div class="project-overlay">
+                            <span>Backyard Patio</span>
+                        </div>
+                    </div>
+                    <div class="project-tile" tabindex="0">
+                        <img src="attached_assets/sutuj img 4_1764541573015.webp" alt="Front Yard Landscaping Bed with Mulch and Plants">
+                        <div class="project-overlay">
+                            <span>Front Yard Landscaping</span>
+                        </div>
+                    </div>
+                    <div class="project-tile" tabindex="0">
+                        <img src="attached_assets/sutuj img 5_1764541573015.webp" alt="Paver Walkway with Stone Steps">
+                        <div class="project-overlay">
+                            <span>Walkway & Stone Steps</span>
+                        </div>
+                    </div>
+                    <div class="project-tile" tabindex="0">
+                        <img src="attached_assets/sutuj img 6_1764541573014.webp" alt="Stone Pathway Through Lawn">
+                        <div class="project-overlay">
+                            <span>Stone Pathway</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Sutuj Landscaping</h2>
+                        <p>Since 2013, Sutuj Landscaping has been proudly serving families and businesses throughout Midlothian, Chesterfield, and the surrounding communities. What started as a passion for creating beautiful outdoor spaces has grown into a trusted local business known for quality craftsmanship and attention to detail.</p>
+                        <p>We're a family-owned company that treats every property like our own. Whether you need regular lawn care to keep things looking sharp or a complete hardscape transformation with custom patios and outdoor living spaces, our experienced team delivers results you'll love.</p>
+                        <ul class="about-list">
+                            <li>Over a decade of local experience</li>
+                            <li>Custom designs tailored to your yard</li>
+                            <li>Clean, respectful crew on every job</li>
+                            <li>Quality materials and lasting craftsmanship</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="attached_assets/image_1764541877243.png" alt="Sutuj Landscaping team member greeting a satisfied customer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="reviews-intro">We're proud of our excellent ratings on Google and Facebook. Here's what our customers have to say about working with Sutuj Landscaping.</p>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Luis and his team did an amazing job on our backyard patio. They were professional, on time, and the quality of work exceeded our expectations. Highly recommend!"</p>
+                        <p class="review-author">— Jennifer M.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"We've used Sutuj Landscaping for lawn care for three years now. Always reliable, always thorough. Our yard has never looked better."</p>
+                        <p class="review-author">— Robert T.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The retaining wall they built for us is beautiful and solved our drainage issues. Great communication throughout the project. Will definitely use them again!"</p>
+                        <p class="review-author">— Sarah K.</p>
+                    </div>
+                </div>
+                <div class="reviews-cta">
+                    <p>Want to see more reviews?</p>
+                    <a href="#" class="btn-secondary">View Reviews on Google</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Request a Free Quote</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <a href="tel:5555555555">(555) 555-5555</a>
+                            <span>Call or text anytime</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">✉️</span>
+                            <a href="mailto:sutujlandscaping@sample.com">sutujlandscaping@sample.com</a>
+                            <span>Email us</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <span style="font-weight: 600; color: var(--deep-green);">Midlothian, Chesterfield & nearby areas</span>
+                            <span>Service Area</span>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="quoteForm" novalidate>
+                        <div class="success-message" id="successMessage">
+                            Thank you! We've received your request and will follow up as soon as possible.
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                                <p class="error-message">Please enter your name</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <p class="error-message">Please enter your phone number</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                                <p class="error-message">Please enter a valid email</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address / Neighborhood</label>
+                                <input type="text" id="address" name="address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">What services are you interested in?</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="lawn-care">Lawn Mowing & Maintenance</option>
+                                <option value="mulching">Mulching & Planting</option>
+                                <option value="hardscaping">Hardscaping (Patios, Walkways, Pavers)</option>
+                                <option value="retaining-walls">Retaining Walls & Edging</option>
+                                <option value="outdoor-living">Outdoor Living Spaces</option>
+                                <option value="custom-builds">Custom Outdoor Builds</option>
+                                <option value="multiple">Multiple Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn-primary">Send My Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hours Strip -->
+    <div class="hours-strip">
+        <div class="container">
+            <p><strong>Hours:</strong> Sunday–Thursday 7 AM – 10 PM, Friday 7 AM – 5 PM, Saturday Closed</p>
+            <p><strong>Service Area:</strong> Midlothian, Chesterfield, and nearby areas</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sutuj Landscaping</h4>
+                <p>Lawn care, hardscaping, and custom outdoor builds – serving with quality and detail since 2013.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <a href="tel:5555555555">(555) 555-5555</a>
+                <a href="mailto:sutujlandscaping@sample.com">sutujlandscaping@sample.com</a>
+                <p>Chesterfield, VA</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#">Find us on Facebook</a>
+                <a href="#">View us on Google</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sutuj Landscaping. All rights reserved.</p>
+            <p>Chesterfield, VA • Serving Midlothian and surrounding areas</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form Validation and Submission
+        const quoteForm = document.getElementById('quoteForm');
+        const successMessage = document.getElementById('successMessage');
+
+        quoteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Reset previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            successMessage.classList.remove('show');
+
+            // Validate required fields
+            let isValid = true;
+            
+            const name = document.getElementById('name');
+            if (!name.value.trim()) {
+                name.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            const phone = document.getElementById('phone');
+            if (!phone.value.trim()) {
+                phone.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            const email = document.getElementById('email');
+            if (email.value.trim() && !isValidEmail(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Clear form
+                quoteForm.reset();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Smooth scroll for anchor links (fallback for older browsers)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
